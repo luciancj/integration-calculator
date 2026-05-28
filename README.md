@@ -55,7 +55,33 @@ The program is platform-agnostic and builds with **CMake** and any C++23 compile
 - **macOS:** `xcode-select --install` (or install Xcode)
 - **Windows:** Visual Studio (C++ workload) or MinGW-w64, plus CMake
 
-### Building
+### Download pre-built releases
+
+Pre-built GUI binaries for each platform are available on the [Releases](https://github.com/luciancj/integration-calculator/releases) page.
+
+| Platform        | File                                        |
+| :-------------- | :------------------------------------------ |
+| macOS (ARM64)   | `Integration-Calculator-macOS-arm64.zip`    |
+| Linux x86_64    | `Integration-Calculator-Linux-x86_64.tar.gz` |
+| Linux ARM64     | `Integration-Calculator-Linux-arm64.tar.gz` |
+| Windows x86_64  | `Integration-Calculator-Windows-x86_64.zip` |
+
+**macOS — "app is damaged" warning.** The app is not notarized (no Apple Developer account). macOS Gatekeeper will block it with a misleading "damaged" message. To fix it, run this once in Terminal after moving the app to `/Applications`:
+
+```bash
+xattr -cr "/Applications/Integration Calculator.app"
+```
+
+**Windows — SmartScreen warning.** Windows may show a "Windows protected your PC" dialog for unsigned apps. Click **More info → Run anyway** to proceed.
+
+**Linux.** No signing required. Mark the binary as executable before running:
+
+```bash
+chmod +x Integration-Calculator-Linux-x86_64
+./Integration-Calculator-Linux-x86_64
+```
+
+### Building from source
 
 From the project root:
 
