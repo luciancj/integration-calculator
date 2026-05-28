@@ -1,6 +1,11 @@
 #include "parser.h"
 #include "exception.h"
 #include <cmath>
+#include <numbers>
+
+// M_PI and M_E are POSIX extensions not available on MSVC — use C++20 <numbers> instead.
+static constexpr double PI = std::numbers::pi;
+static constexpr double EU = std::numbers::e;
 
 namespace engine {
 
@@ -95,9 +100,9 @@ static Node *parseFactor() {
     if (name == "x")
       return new VariableNode('x');
     if (name == "pi" || name == "PI")
-      return new NumberNode(M_PI);
+      return new NumberNode(PI);
     if (name == "e")
-      return new NumberNode(M_E);
+      return new NumberNode(EU);
 
     // I used AI to design function call parsing: check for '(' after the name,
     // then parse 1 or 2 comma-separated arguments.
