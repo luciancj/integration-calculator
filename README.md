@@ -5,7 +5,9 @@
 ![Language](https://img.shields.io/badge/language-C%2B%2B23-orange.svg)
 ![Build](https://img.shields.io/badge/build-CMake-064F8C.svg?logo=cmake)
 ![Tests](https://img.shields.io/badge/tests-24%20passing-brightgreen.svg)
+[![Release](https://github.com/luciancj/integration-calculator/actions/workflows/release.yml/badge.svg?event=release)](https://github.com/luciancj/integration-calculator/actions/workflows/release.yml)
 ![GUI](https://img.shields.io/badge/GUI-wxWidgets-43A047.svg)
+
 
 ## Introduction
 
