@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+# Build the project
+echo "Building project..."
+mkdir -p build
+cmake -S . -B build -DBUILD_GUI=ON
+cmake --build build --target IntegrationCalculatorGUI
+
+# Get absolute path to the GUI executable
+BUILD_DIR="$(pwd)/build"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  APP_BUNDLE_PATH="$BUILD_DIR/Integration Calculator.app"
+  EXEC_PATH="$APP_BUNDLE_PATH/Contents/MacOS/Integration Calculator"
+else
+  EXEC_PATH="$BUILD_DIR/IntegrationCalculatorGUI"
+fi
+
+# Check if executable exists
+if [ ! -f "$EXEC_PATH" ]; then
+  echo "Error: Build succeeded, but GUI executable was not found at:"
+  echo "  $EXEC_PATH"
+  exit 1
+fi
+
+echo "Launching Integration Calculator GUI..."
+"$EXEC_PATH"

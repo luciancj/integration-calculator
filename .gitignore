@@ -1,0 +1,21 @@
+# Build output
+build/
+*.o
+*.a
+*.out
+
+# macOS
+.DS_Store
+.cache/
+
+# Compiled binaries at project root
+IntegrationCalculator
+
+# Output files
+output.csv
+
+# PDF documentation (large, generated)
+*.pdf
+
+# Submission version with personal info
+README-SUBMIT.md
